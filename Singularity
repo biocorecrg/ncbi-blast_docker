@@ -1,7 +1,7 @@
 BootStrap: debootstrap
 OSVersion: stretch
 MirrorURL:  http://ftp.fr.debian.org/debian/
-Include: curl
+Include: curl perl-modules-5.24 libencode-perl
 
 %runscript
     echo "Welcome to BiocoreCRG NCBI Blast Image"
