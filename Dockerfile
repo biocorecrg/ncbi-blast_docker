@@ -1,12 +1,12 @@
-FROM debian:stretch
+FROM debian:buster
 
 # File Author / Maintainer
 MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu> 
 
-ARG BLAST_VERSION=2.8.1
+ARG BLAST_VERSION=2.10.1
 
 RUN apt-get update; apt-get install -y curl;
-RUN apt-get install -y perl-modules-5.24 libencode-perl;
+RUN apt-get install -y perl-modules-5.28 libencode-perl;
 
 RUN cd /usr/local; curl --fail --silent --show-error --location --remote-name ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
 RUN cd /usr/local; tar zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz; rm ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
